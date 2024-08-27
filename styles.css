@@ -1,0 +1,244 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+/* Botão de Alternar Modo Escuro */
+#dark-mode-toggle {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Navegação */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+/* Ajuste do Menu de Navegação */
+nav ul li a {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Cabeçalho */
+header {
+    padding-top: 100px;  /* Ajustado para deixar espaço suficiente */
+    text-align: center;
+    padding: 80px 20px;  /* Maior espaçamento para evitar sobreposição */
+    background-color: #f4f4f4;
+}
+
+/* Perfil */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 180px; /* Limita a largura máxima */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 30%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 5px solid #007BFF;  /* Mantém a borda */
+}
+
+.profile-info {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h2 {
+    color: #007BFF; /* Cor para os títulos */
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+section {
+    display: block;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    opacity: 1;  /* Alterado para garantir visibilidade */
+    transform: translateY(0);  /* Removida a animação de movimento */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botão de Voltar ao Topo */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Consultas de Mídia */
+
+/* Tablets (entre 600px e 1024px de largura) */
+@media (max-width: 1024px) and (min-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .profile-pic {
+        max-width: 150px;
+    }
+
+    header {
+        padding: 60px 20px;  /* Ajuste para dispositivos menores */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    section {
+        margin: 10px;
+    }
+}
+
+/* Celulares (até 599px de largura) */
+@media (max-width: 599px) {
+    nav {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #dark-mode-toggle {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .profile-pic {
+        max-width: 120px;
+    }
+
+    header {
+        padding: 40px 10px;  /* Reduzir o espaço para celulares */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    section {
+        margin: 5px;
+        padding: 15px;
+    }
+
+    #back-to-top {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
